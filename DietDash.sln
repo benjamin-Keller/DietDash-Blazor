@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DietDash.Client", "DietDash
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DietDash.Shared", "DietDash\Shared\DietDash.Shared.csproj", "{D27816A5-516A-47A5-992B-08DCBE241098}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DietDash.Tests", "DietDash\Tests\DietDash.Tests.csproj", "{1DAFD10D-C5C4-4861-B73E-E8C14F792C36}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{D27816A5-516A-47A5-992B-08DCBE241098}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D27816A5-516A-47A5-992B-08DCBE241098}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D27816A5-516A-47A5-992B-08DCBE241098}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1DAFD10D-C5C4-4861-B73E-E8C14F792C36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1DAFD10D-C5C4-4861-B73E-E8C14F792C36}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1DAFD10D-C5C4-4861-B73E-E8C14F792C36}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1DAFD10D-C5C4-4861-B73E-E8C14F792C36}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
