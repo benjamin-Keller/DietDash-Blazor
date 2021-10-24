@@ -1,0 +1,49 @@
+﻿@page "/patients"
+@attribute [Authorize]
+@inject IPatientService _patientService
+
+<h3>Patients</h3>
+<div class="row" style="padding-bottom: 1rem;">
+    <div class="col align-right" style="margin-right:3rem;">
+        <div class="btn btn-outline-primary">Add Patient</div>
+    </div>
+</div>
+
+    <table class="table w-75 table-center">
+        <thead>
+            <tr>
+                <th>File Name</th>
+                <th>LastName</th>
+                <th>Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (!patients.Any())
+            {
+                <tr>
+                    <td colspan="3">Loading...</td>
+                </tr>
+            }
+            else
+            {
+                @foreach(var patient in patients)
+                {
+                    <tr>
+                        <td>@patient.FileName</td>
+                        <td>@patient.LastName</td>
+                        <td>@patient.FirstName @patient.SecondName</td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+
+@code {
+    List<Patient> patients = new List<Patient>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        var dietitianId = Guid.NewGuid();
+        patients = await _patientService.GetPatientsAsync(dietitianId);
+    }
+}

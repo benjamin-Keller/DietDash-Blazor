@@ -1,6 +1,6 @@
 ﻿using DietDash.Shared;
 using DietDash.Shared.Patient;
-using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -9,7 +9,8 @@ using System.Threading.Tasks;
 namespace DietDash.Server.Controllers
 {
     [ApiController]
-    [Route("api/v1/[controller]")]
+    [Authorize]
+    [Route("api/v1/dietitian/{dietitianId}/[controller]")]
     public class PatientController : ControllerBase
     {
         static List<Dietitian> dietitans = new List<Dietitian>
@@ -68,7 +69,7 @@ namespace DietDash.Server.Controllers
         };
 
         [HttpGet(Name = "GetPatients")]
-        public async Task<ActionResult> Get()
+        public async Task<ActionResult> Get(Guid dietitianId)
         {
             return Ok(patients);
         }
