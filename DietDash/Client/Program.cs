@@ -1,3 +1,5 @@
+using DietDash.Client.Services;
+using DietDash.Client.Services.Interfaces;
 using Microsoft.AspNetCore.Components.WebAssembly.Authentication;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -23,6 +25,7 @@ namespace DietDash.Client
 
             // Supply HttpClient instances that include access tokens when making requests to the server project
             builder.Services.AddScoped(sp => sp.GetRequiredService<IHttpClientFactory>().CreateClient("DietDash.ServerAPI"));
+            builder.Services.AddScoped<IPatientService, PatientService>();
 
             builder.Services.AddApiAuthorization();
 
